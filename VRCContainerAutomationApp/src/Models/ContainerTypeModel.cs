@@ -1,6 +1,6 @@
 ﻿namespace VRCContainerAutomationApp.Models;
 
-public class ContainerType
+public class ContainerTypeModel
 {
     public int Id { get; set; }
     public string Type { get; set; } = string.Empty;

@@ -12,17 +12,6 @@ namespace VRCContainerAutomationApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
-
-            //var sql = "SELECT * FROM warehouse_locations where warehouse_locations.id = $id;";
-            //Dictionary<string, object> sim = new Dictionary<string, object>()
-            //{
-            //    { "$id", 2 }
-            //};
-            //var result = SQLiteService.ExecuteQuery(sql, sim);
-            //for (int i = 0; i < result.Count; i++)
-            //{
-            //    Debug.WriteLine($"SIM ----->> {result[i]["zone"]}");
-            //}
         }
     }
 }

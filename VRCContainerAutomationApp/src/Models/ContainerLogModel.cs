@@ -1,6 +1,6 @@
 ﻿namespace VRCContainerAutomationApp.Models;
 
-public class ContainerLog
+public class ContainerLogModel
 {
     public int Id { get; set; }
     public int IdContainer { get; set; }

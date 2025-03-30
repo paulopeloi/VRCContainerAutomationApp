@@ -1,14 +1,15 @@
 ﻿using VRCContainerAutomationApp.Models;
 
+namespace VRCContainerAutomationApp.Mappers;
 public static class ContainerTypeMapper
 {
-    public static ContainerType FromRow(Dictionary<string, object> row)
+    public static ContainerTypeModel FromRow(Dictionary<string, object> row)
     {
-        return new ContainerType
+        return new ContainerTypeModel
         {
             Id = Convert.ToInt32(row["id"]),
-            Type = row["type"].ToString() ?? string.Empty,
-            Description = row["description"].ToString() ?? string.Empty
+            Type = Convert.ToString(row["type"]) ?? string.Empty,
+            Description = Convert.ToString(row["description"]) ?? string.Empty
         };
     }
 }
