@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             footerMain = new Panel();
-            buttonSubmit = new Button();
+            ButtonSubmit = new Button();
             headerMain = new Panel();
             labelHeader = new Label();
-            comboBoxContainerType = new ComboBox();
+            InputSelectType = new ComboBox();
             labelContainerType = new Label();
-            textBoxHeight = new TextBox();
-            textBoxWeight = new TextBox();
+            InputHeight = new TextBox();
+            InputWeight = new TextBox();
             labelHeight = new Label();
             labelWeight = new Label();
             formContent = new Panel();
-            panel1 = new Panel();
-            buttonUUID = new Button();
+            logoVRC = new Panel();
+            ButtonUUID = new Button();
             labelUUID = new Label();
-            textBoxUUID = new TextBox();
+            InputUUID = new TextBox();
             footerMain.SuspendLayout();
             headerMain.SuspendLayout();
             formContent.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             footerMain.BackColor = Color.WhiteSmoke;
             footerMain.BorderStyle = BorderStyle.FixedSingle;
-            footerMain.Controls.Add(buttonSubmit);
+            footerMain.Controls.Add(ButtonSubmit);
             footerMain.Dock = DockStyle.Bottom;
             footerMain.Location = new Point(0, 401);
             footerMain.Name = "footerMain";
@@ -61,26 +61,26 @@
             footerMain.Size = new Size(784, 60);
             footerMain.TabIndex = 0;
             // 
-            // buttonSubmit
+            // ButtonSubmit
             // 
-            buttonSubmit.AutoSize = true;
-            buttonSubmit.BackColor = Color.White;
-            buttonSubmit.BackgroundImageLayout = ImageLayout.None;
-            buttonSubmit.Dock = DockStyle.Right;
-            buttonSubmit.FlatAppearance.BorderSize = 2;
-            buttonSubmit.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonSubmit.ForeColor = Color.Black;
-            buttonSubmit.Image = Properties.Resources.warehouse_icon;
-            buttonSubmit.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSubmit.Location = new Point(655, 12);
-            buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.RightToLeft = RightToLeft.No;
-            buttonSubmit.Size = new Size(111, 34);
-            buttonSubmit.TabIndex = 4;
-            buttonSubmit.Text = "Armazenar";
-            buttonSubmit.TextAlign = ContentAlignment.MiddleRight;
-            buttonSubmit.TextImageRelation = TextImageRelation.ImageBeforeText;
-            buttonSubmit.UseVisualStyleBackColor = false;
+            ButtonSubmit.AutoSize = true;
+            ButtonSubmit.BackColor = Color.White;
+            ButtonSubmit.BackgroundImageLayout = ImageLayout.None;
+            ButtonSubmit.Dock = DockStyle.Right;
+            ButtonSubmit.FlatAppearance.BorderSize = 2;
+            ButtonSubmit.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonSubmit.ForeColor = Color.Black;
+            ButtonSubmit.Image = Properties.Resources.warehouse_icon;
+            ButtonSubmit.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonSubmit.Location = new Point(655, 12);
+            ButtonSubmit.Name = "ButtonSubmit";
+            ButtonSubmit.RightToLeft = RightToLeft.No;
+            ButtonSubmit.Size = new Size(111, 34);
+            ButtonSubmit.TabIndex = 4;
+            ButtonSubmit.Text = "Armazenar";
+            ButtonSubmit.TextAlign = ContentAlignment.MiddleRight;
+            ButtonSubmit.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ButtonSubmit.UseVisualStyleBackColor = false;
             // 
             // headerMain
             // 
@@ -106,17 +106,16 @@
             labelHeader.TabIndex = 0;
             labelHeader.Text = "Informe os dados do container para prosseguir com o armazenamento";
             labelHeader.TextAlign = ContentAlignment.MiddleLeft;
-            labelHeader.Click += label1_Click_1;
             // 
-            // comboBoxContainerType
+            // InputSelectType
             // 
-            comboBoxContainerType.Font = new Font("Arial", 9.75F);
-            comboBoxContainerType.ForeColor = Color.Black;
-            comboBoxContainerType.FormattingEnabled = true;
-            comboBoxContainerType.Location = new Point(26, 50);
-            comboBoxContainerType.Name = "comboBoxContainerType";
-            comboBoxContainerType.Size = new Size(416, 24);
-            comboBoxContainerType.TabIndex = 0;
+            InputSelectType.Font = new Font("Arial", 9.75F);
+            InputSelectType.ForeColor = Color.Black;
+            InputSelectType.FormattingEnabled = true;
+            InputSelectType.Location = new Point(26, 50);
+            InputSelectType.Name = "InputSelectType";
+            InputSelectType.Size = new Size(416, 24);
+            InputSelectType.TabIndex = 0;
             // 
             // labelContainerType
             // 
@@ -129,23 +128,23 @@
             labelContainerType.TabIndex = 3;
             labelContainerType.Text = "Tipo";
             // 
-            // textBoxHeight
+            // InputHeight
             // 
-            textBoxHeight.Font = new Font("Arial", 9.75F);
-            textBoxHeight.ForeColor = Color.Black;
-            textBoxHeight.Location = new Point(26, 110);
-            textBoxHeight.Name = "textBoxHeight";
-            textBoxHeight.Size = new Size(416, 22);
-            textBoxHeight.TabIndex = 1;
+            InputHeight.Font = new Font("Arial", 9.75F);
+            InputHeight.ForeColor = Color.Black;
+            InputHeight.Location = new Point(26, 110);
+            InputHeight.Name = "InputHeight";
+            InputHeight.Size = new Size(416, 22);
+            InputHeight.TabIndex = 1;
             // 
-            // textBoxWeight
+            // InputWeight
             // 
-            textBoxWeight.Font = new Font("Arial", 9.75F);
-            textBoxWeight.ForeColor = Color.Black;
-            textBoxWeight.Location = new Point(26, 170);
-            textBoxWeight.Name = "textBoxWeight";
-            textBoxWeight.Size = new Size(416, 22);
-            textBoxWeight.TabIndex = 2;
+            InputWeight.Font = new Font("Arial", 9.75F);
+            InputWeight.ForeColor = Color.Black;
+            InputWeight.Location = new Point(26, 170);
+            InputWeight.Name = "InputWeight";
+            InputWeight.Size = new Size(416, 22);
+            InputWeight.TabIndex = 2;
             // 
             // labelHeight
             // 
@@ -172,16 +171,16 @@
             // formContent
             // 
             formContent.BackColor = Color.White;
-            formContent.Controls.Add(panel1);
-            formContent.Controls.Add(buttonUUID);
+            formContent.Controls.Add(logoVRC);
+            formContent.Controls.Add(ButtonUUID);
             formContent.Controls.Add(labelUUID);
-            formContent.Controls.Add(textBoxUUID);
-            formContent.Controls.Add(textBoxHeight);
+            formContent.Controls.Add(InputUUID);
+            formContent.Controls.Add(InputHeight);
             formContent.Controls.Add(labelWeight);
-            formContent.Controls.Add(comboBoxContainerType);
+            formContent.Controls.Add(InputSelectType);
             formContent.Controls.Add(labelHeight);
             formContent.Controls.Add(labelContainerType);
-            formContent.Controls.Add(textBoxWeight);
+            formContent.Controls.Add(InputWeight);
             formContent.Dock = DockStyle.Fill;
             formContent.Location = new Point(0, 60);
             formContent.Margin = new Padding(0);
@@ -189,29 +188,30 @@
             formContent.Size = new Size(784, 341);
             formContent.TabIndex = 8;
             // 
-            // panel1
+            // logoVRC
             // 
-            panel1.BackColor = Color.White;
-            panel1.BackgroundImage = Properties.Resources.vrc_logo;
-            panel1.BackgroundImageLayout = ImageLayout.Center;
-            panel1.Location = new Point(484, 50);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(259, 238);
-            panel1.TabIndex = 13;
+            logoVRC.BackColor = Color.White;
+            logoVRC.BackgroundImage = Properties.Resources.vrc_logo;
+            logoVRC.BackgroundImageLayout = ImageLayout.Center;
+            logoVRC.Location = new Point(484, 50);
+            logoVRC.Name = "logoVRC";
+            logoVRC.Size = new Size(259, 238);
+            logoVRC.TabIndex = 13;
             // 
-            // buttonUUID
+            // ButtonUUID
             // 
-            buttonUUID.BackColor = Color.White;
-            buttonUUID.BackgroundImageLayout = ImageLayout.None;
-            buttonUUID.FlatAppearance.BorderColor = Color.Red;
-            buttonUUID.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonUUID.ForeColor = Color.Black;
-            buttonUUID.Location = new Point(362, 258);
-            buttonUUID.Name = "buttonUUID";
-            buttonUUID.Size = new Size(80, 30);
-            buttonUUID.TabIndex = 3;
-            buttonUUID.Text = "Gerar ID";
-            buttonUUID.UseVisualStyleBackColor = false;
+            ButtonUUID.BackColor = Color.White;
+            ButtonUUID.BackgroundImageLayout = ImageLayout.None;
+            ButtonUUID.FlatAppearance.BorderColor = Color.Red;
+            ButtonUUID.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonUUID.ForeColor = Color.Black;
+            ButtonUUID.Location = new Point(362, 258);
+            ButtonUUID.Name = "ButtonUUID";
+            ButtonUUID.Size = new Size(80, 30);
+            ButtonUUID.TabIndex = 3;
+            ButtonUUID.Text = "Gerar ID";
+            ButtonUUID.UseVisualStyleBackColor = false;
+            ButtonUUID.MouseClick += ButtonUUID_MouseClick;
             // 
             // labelUUID
             // 
@@ -224,17 +224,17 @@
             labelUUID.TabIndex = 9;
             labelUUID.Text = "ID Único";
             // 
-            // textBoxUUID
+            // InputUUID
             // 
-            textBoxUUID.Font = new Font("Arial", 9.75F);
-            textBoxUUID.ForeColor = Color.Black;
-            textBoxUUID.Location = new Point(26, 230);
-            textBoxUUID.Name = "textBoxUUID";
-            textBoxUUID.ReadOnly = true;
-            textBoxUUID.Size = new Size(416, 22);
-            textBoxUUID.TabIndex = 0;
-            textBoxUUID.TabStop = false;
-            textBoxUUID.TextChanged += textBoxUUID_TextChanged;
+            InputUUID.Enabled = false;
+            InputUUID.Font = new Font("Arial", 9.75F);
+            InputUUID.ForeColor = Color.Black;
+            InputUUID.Location = new Point(26, 230);
+            InputUUID.Name = "InputUUID";
+            InputUUID.ReadOnly = true;
+            InputUUID.Size = new Size(416, 22);
+            InputUUID.TabIndex = 0;
+            InputUUID.TabStop = false;
             // 
             // MainForm
             // 
@@ -247,10 +247,12 @@
             Controls.Add(footerMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MinimumSize = new Size(800, 500);
             Name = "MainForm";
             Text = "VRC Warehouse Technologies";
             TopMost = true;
             Load += MainForm_Load;
+            Shown += MainForm_Shown;
             footerMain.ResumeLayout(false);
             footerMain.PerformLayout();
             headerMain.ResumeLayout(false);
@@ -263,18 +265,18 @@
 
         private Panel footerMain;
         private Panel headerMain;
-        private ComboBox comboBoxContainerType;
+        private ComboBox InputSelectType;
         private Label labelContainerType;
-        private TextBox textBoxHeight;
-        private TextBox textBoxWeight;
+        private TextBox InputHeight;
+        private TextBox InputWeight;
         private Label labelHeight;
         private Label labelWeight;
         private Panel formContent;
         private Label labelUUID;
-        private TextBox textBoxUUID;
-        private Button buttonUUID;
-        private Button buttonSubmit;
+        private TextBox InputUUID;
+        private Button ButtonUUID;
+        private Button ButtonSubmit;
         private Label labelHeader;
-        private Panel panel1;
+        private Panel logoVRC;
     }
 }

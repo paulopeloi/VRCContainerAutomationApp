@@ -11,19 +11,18 @@
   <ItemGroup>
     <None Remove="Resources\vrc-logo1.png" />
     <None Remove="Resources\warehouse-icon.png" />
+    <None Remove="src\Database\vrc_industrial_automation.db" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="src\Database\" />
     <Folder Include="src\Logs\" />
     <Folder Include="src\Controllers\" />
     <Folder Include="src\SQLs\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.3" />
-    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.11" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace VRCContainerAutomationApp
 {
     internal static class Program
@@ -15,8 +13,12 @@ namespace VRCContainerAutomationApp
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
 
-            //var sql = "SELECT * FROM warehouse_locations";
-            //var result = Database.SQLiteService.ExecuteQuery(sql);
+            //var sql = "SELECT * FROM warehouse_locations where warehouse_locations.id = $id;";
+            //Dictionary<string, object> sim = new Dictionary<string, object>()
+            //{
+            //    { "$id", 2 }
+            //};
+            //var result = SQLiteService.ExecuteQuery(sql, sim);
             //for (int i = 0; i < result.Count; i++)
             //{
             //    Debug.WriteLine($"SIM ----->> {result[i]["zone"]}");
