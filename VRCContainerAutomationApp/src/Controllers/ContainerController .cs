@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using VRCContainerAutomationApp.Models;
 using VRCContainerAutomationApp.Services;
 
 namespace VRCContainerAutomationApp.Controllers;
@@ -26,5 +27,10 @@ public static class ContainerController
             Debug.WriteLine($"[ERRO] Falha ao armazenar container: {ex.Message}");
             return false;
         }
+    }
+
+    public static List<ContainerListModel> GetAllContainers()
+    {
+        return ContainerService.GetAllContainers();
     }
 }

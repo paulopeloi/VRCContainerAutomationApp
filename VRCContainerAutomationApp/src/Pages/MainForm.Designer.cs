@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             footerMain = new Panel();
+            ButtonListContainers = new Button();
             ButtonSubmit = new Button();
             headerMain = new Panel();
             labelHeader = new Label();
@@ -55,6 +56,7 @@
             // 
             footerMain.BackColor = Color.WhiteSmoke;
             footerMain.BorderStyle = BorderStyle.FixedSingle;
+            footerMain.Controls.Add(ButtonListContainers);
             footerMain.Controls.Add(ButtonSubmit);
             footerMain.Dock = DockStyle.Bottom;
             footerMain.Location = new Point(0, 401);
@@ -62,6 +64,28 @@
             footerMain.Padding = new Padding(16, 12, 16, 12);
             footerMain.Size = new Size(784, 60);
             footerMain.TabIndex = 0;
+            // 
+            // ButtonListContainers
+            // 
+            ButtonListContainers.AutoSize = true;
+            ButtonListContainers.BackColor = Color.White;
+            ButtonListContainers.BackgroundImageLayout = ImageLayout.None;
+            ButtonListContainers.Dock = DockStyle.Left;
+            ButtonListContainers.FlatAppearance.BorderSize = 2;
+            ButtonListContainers.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonListContainers.ForeColor = Color.Black;
+            ButtonListContainers.Image = Properties.Resources.list_bulleted_icon;
+            ButtonListContainers.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonListContainers.Location = new Point(16, 12);
+            ButtonListContainers.Name = "ButtonListContainers";
+            ButtonListContainers.RightToLeft = RightToLeft.No;
+            ButtonListContainers.Size = new Size(130, 34);
+            ButtonListContainers.TabIndex = 5;
+            ButtonListContainers.Text = "Ver Containers";
+            ButtonListContainers.TextAlign = ContentAlignment.MiddleRight;
+            ButtonListContainers.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ButtonListContainers.UseVisualStyleBackColor = false;
+            ButtonListContainers.Click += ButtonListContainers_Click;
             // 
             // ButtonSubmit
             // 
@@ -83,7 +107,7 @@
             ButtonSubmit.TextAlign = ContentAlignment.MiddleRight;
             ButtonSubmit.TextImageRelation = TextImageRelation.ImageBeforeText;
             ButtonSubmit.UseVisualStyleBackColor = false;
-            ButtonSubmit.MouseClick += ButtonSubmit_MouseClick;
+            ButtonSubmit.Click += ButtonSubmit_Click;
             // 
             // headerMain
             // 
@@ -140,9 +164,9 @@
             labelHeight.ForeColor = Color.Black;
             labelHeight.Location = new Point(26, 90);
             labelHeight.Name = "labelHeight";
-            labelHeight.Size = new Size(45, 16);
+            labelHeight.Size = new Size(69, 16);
             labelHeight.TabIndex = 6;
-            labelHeight.Text = "Altura";
+            labelHeight.Text = "Altura (m)";
             // 
             // labelWeight
             // 
@@ -151,9 +175,9 @@
             labelWeight.ForeColor = Color.Black;
             labelWeight.Location = new Point(26, 150);
             labelWeight.Name = "labelWeight";
-            labelWeight.Size = new Size(38, 16);
+            labelWeight.Size = new Size(65, 16);
             labelWeight.TabIndex = 7;
-            labelWeight.Text = "Peso";
+            labelWeight.Text = "Peso (kg)";
             // 
             // formContent
             // 
@@ -222,7 +246,7 @@
             ButtonUUID.TabIndex = 3;
             ButtonUUID.Text = "Gerar ID";
             ButtonUUID.UseVisualStyleBackColor = false;
-            ButtonUUID.MouseClick += ButtonUUID_MouseClick;
+            ButtonUUID.Click += ButtonUUID_Click;
             // 
             // labelUUID
             // 
@@ -251,13 +275,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Snow;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(784, 461);
             Controls.Add(formContent);
             Controls.Add(headerMain);
             Controls.Add(footerMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MaximumSize = new Size(800, 500);
             MinimumSize = new Size(800, 500);
             Name = "MainForm";
             Text = "VRC Warehouse Technologies";
@@ -291,5 +316,6 @@
         private Panel logoVRC;
         private NumericUpDown InputWeight;
         private NumericUpDown InputHeight;
+        private Button ButtonListContainers;
     }
 }

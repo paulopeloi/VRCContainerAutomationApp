@@ -1,4 +1,7 @@
 ﻿using VRCContainerAutomationApp.Database;
+using VRCContainerAutomationApp.Mappers;
+using VRCContainerAutomationApp.Models;
+using VRCContainerAutomationApp.SQLs;
 
 namespace VRCContainerAutomationApp.Services;
 
@@ -51,5 +54,14 @@ public static class ContainerService
             updateLocationCountCmd.Parameters.AddWithValue("@idLocation", idLocationValue);
             updateLocationCountCmd.ExecuteNonQuery();
         });
+    }
+
+    public static List<ContainerListModel> GetAllContainers()
+    {
+        var sql = ContainerSql.GetAllContainers;
+
+        var result = SQLiteService.ExecuteQuery(sql);
+
+        return result.Select(ContainerListMapper.FromRow).ToList();
     }
 }

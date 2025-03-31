@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\edit-icon.png" />
+    <None Remove="Resources\list-icon.png" />
     <None Remove="Resources\vrc-logo1.png" />
     <None Remove="Resources\warehouse-icon.png" />
     <None Remove="src\Database\vrc_industrial_automation.db" />
