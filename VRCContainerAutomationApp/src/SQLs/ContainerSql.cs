@@ -20,4 +20,21 @@ public static class ContainerSql
               JOIN containers_status   ON (containers_status.id   = containers.id_status)
               JOIN warehouse_locations ON (warehouse_locations.id = containers.id_location)
         ";
+
+    public static string GetContainerChangeLocation =>
+        @"
+            SELECT containers.id,
+                   containers.uuid,
+                   containers.height,
+                   containers.weight,
+                   containers.id_type AS idType,
+                   containers_types.type,
+                   containers.id_status AS idStatus,
+                   warehouse_locations.id AS idCurrentLocation,
+                   warehouse_locations.zone AS currentLocationZone
+              FROM containers
+              JOIN containers_types    ON (containers_types.id    = containers.id_type)
+              JOIN warehouse_locations ON (warehouse_locations.id = containers.id_location)
+             WHERE containers.uuid = @uuid
+        ";
 }

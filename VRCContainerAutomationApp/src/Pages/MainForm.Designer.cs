@@ -285,6 +285,7 @@
             MaximumSize = new Size(800, 500);
             MinimumSize = new Size(800, 500);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VRC Warehouse Technologies";
             TopMost = true;
             Load += MainForm_Load;

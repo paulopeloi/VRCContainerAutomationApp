@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VRCContainerAutomationApp.Controllers;
-using VRCContainerAutomationApp.Models;
+﻿using VRCContainerAutomationApp.Controllers;
+using VRCContainerAutomationApp.src.Pages;
 
 namespace VRCContainerAutomationApp
 {
@@ -46,7 +36,13 @@ namespace VRCContainerAutomationApp
                 MessageBox.Show($"Falha ao carregar os dados: {ex.Message}!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void ContainersListForm_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            this.BringToFront();
+            this.Activate();
+            LoadDataGrid();
+        }
         private bool ConfirmDispatch(string uuid)
         {
             var confirm = MessageBox.Show(
@@ -58,15 +54,6 @@ namespace VRCContainerAutomationApp
 
             return confirm == DialogResult.OK;
         }
-
-        private void ContainersListForm_Load(object sender, EventArgs e)
-        {
-            this.TopMost = true;
-            this.BringToFront();
-            this.Activate();
-            LoadDataGrid();
-        }
-
         private void ButtonDispatch_Click(object sender, EventArgs e)
         {
             if (dataGridContainers.SelectedCells.Count > 0)
@@ -106,10 +93,19 @@ namespace VRCContainerAutomationApp
         {
             if (dataGridContainers.SelectedCells.Count > 0)
             {
-                var selectedRowIndex = dataGridContainers.SelectedCells[0].RowIndex;
-                var selectedContainerId = dataGridContainers.Rows[selectedRowIndex].Cells["uuid"].Value;
+                var rowIndex = dataGridContainers.SelectedCells[0].RowIndex;
+                var idStatus = Convert.ToInt32(dataGridContainers.Rows[rowIndex].Cells["idStatus"].Value);
 
-                Debug.WriteLine($"Location container: {selectedContainerId}");
+                if (idStatus == 2)
+                {
+                    MessageBox.Show("Container já despachado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var uuid = dataGridContainers.Rows[rowIndex].Cells["uuid"].Value?.ToString() ?? string.Empty;
+
+                new ChangeLocationForm(uuid).ShowDialog();
+                LoadDataGrid();
             }
             else
             {

@@ -49,8 +49,8 @@
             headerMain.Location = new Point(0, 0);
             headerMain.Margin = new Padding(0);
             headerMain.Name = "headerMain";
-            headerMain.Padding = new Padding(16, 12, 16, 12);
-            headerMain.Size = new Size(784, 60);
+            headerMain.Padding = new Padding(16, 13, 16, 13);
+            headerMain.Size = new Size(784, 64);
             headerMain.TabIndex = 2;
             // 
             // labelHeader
@@ -58,9 +58,9 @@
             labelHeader.BackColor = Color.Transparent;
             labelHeader.Dock = DockStyle.Bottom;
             labelHeader.Font = new Font("Arial", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelHeader.Location = new Point(16, 10);
+            labelHeader.Location = new Point(16, 11);
             labelHeader.Name = "labelHeader";
-            labelHeader.Size = new Size(750, 36);
+            labelHeader.Size = new Size(750, 38);
             labelHeader.TabIndex = 1;
             labelHeader.Text = "Containers armazenados";
             labelHeader.TextAlign = ContentAlignment.MiddleLeft;
@@ -72,10 +72,10 @@
             footerMain.Controls.Add(ButtonDispatch);
             footerMain.Controls.Add(ButtonLocation);
             footerMain.Dock = DockStyle.Bottom;
-            footerMain.Location = new Point(0, 401);
+            footerMain.Location = new Point(0, 428);
             footerMain.Name = "footerMain";
-            footerMain.Padding = new Padding(16, 12, 16, 12);
-            footerMain.Size = new Size(784, 60);
+            footerMain.Padding = new Padding(16, 13, 16, 13);
+            footerMain.Size = new Size(784, 64);
             footerMain.TabIndex = 3;
             // 
             // ButtonDispatch
@@ -88,13 +88,12 @@
             ButtonDispatch.ForeColor = Color.Black;
             ButtonDispatch.Image = Properties.Resources.dispatch_icon;
             ButtonDispatch.ImageAlign = ContentAlignment.MiddleLeft;
-            ButtonDispatch.Location = new Point(531, 12);
+            ButtonDispatch.Location = new Point(520, 13);
             ButtonDispatch.Name = "ButtonDispatch";
             ButtonDispatch.RightToLeft = RightToLeft.No;
-            ButtonDispatch.Size = new Size(111, 34);
+            ButtonDispatch.Size = new Size(120, 36);
             ButtonDispatch.TabIndex = 0;
             ButtonDispatch.Text = "Despachar";
-            ButtonDispatch.TextAlign = ContentAlignment.MiddleRight;
             ButtonDispatch.TextImageRelation = TextImageRelation.ImageBeforeText;
             ButtonDispatch.UseVisualStyleBackColor = false;
             ButtonDispatch.Click += ButtonDispatch_Click;
@@ -110,12 +109,12 @@
             ButtonLocation.ForeColor = Color.Black;
             ButtonLocation.Image = Properties.Resources.location_icon;
             ButtonLocation.ImageAlign = ContentAlignment.MiddleLeft;
-            ButtonLocation.Location = new Point(648, 12);
+            ButtonLocation.Location = new Point(646, 13);
             ButtonLocation.Name = "ButtonLocation";
             ButtonLocation.RightToLeft = RightToLeft.No;
-            ButtonLocation.Size = new Size(118, 34);
+            ButtonLocation.Size = new Size(120, 36);
             ButtonLocation.TabIndex = 1;
-            ButtonLocation.Text = "Localização";
+            ButtonLocation.Text = "Trocar Local";
             ButtonLocation.TextAlign = ContentAlignment.MiddleRight;
             ButtonLocation.TextImageRelation = TextImageRelation.ImageBeforeText;
             ButtonLocation.UseVisualStyleBackColor = false;
@@ -126,25 +125,28 @@
             dataGridContainers.BackgroundColor = Color.White;
             dataGridContainers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridContainers.Dock = DockStyle.Fill;
-            dataGridContainers.Location = new Point(0, 60);
+            dataGridContainers.Location = new Point(0, 64);
             dataGridContainers.Name = "dataGridContainers";
-            dataGridContainers.Size = new Size(784, 341);
+            dataGridContainers.Size = new Size(784, 364);
             dataGridContainers.TabIndex = 4;
             // 
             // ContainersListForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(784, 492);
             Controls.Add(dataGridContainers);
             Controls.Add(footerMain);
             Controls.Add(headerMain);
+            Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(800, 500);
-            MinimumSize = new Size(800, 500);
+            MaximumSize = new Size(800, 531);
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 531);
             Name = "ContainersListForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VRC Warehouse Technologies";
             Load += ContainersListForm_Load;
             headerMain.ResumeLayout(false);

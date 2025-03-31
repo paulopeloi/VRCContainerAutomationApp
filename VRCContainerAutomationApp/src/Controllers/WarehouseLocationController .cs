@@ -16,4 +16,9 @@ public static class WarehouseLocationController
 
         return WarehouseLocationService.FindAvailableLocation(idTypeValue, weightValue, heightValue);
     }
+
+    public static List<WarehouseLocationChangeModel> FindLocationsToChangeLocation(int idCurrentLocation, int idType, decimal weightValue, decimal heightValue)
+    {
+        return WarehouseLocationService.FindLocationsToChangeLocation(idCurrentLocation, idType, weightValue, heightValue);
+    }
 }

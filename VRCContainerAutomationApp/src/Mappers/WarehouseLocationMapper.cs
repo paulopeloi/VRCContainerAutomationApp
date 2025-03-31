@@ -11,8 +11,8 @@ public static class WarehouseLocationMapper
             Id = Convert.ToInt32(row["id"]),
             Zone = Convert.ToString(row["zone"]) ?? string.Empty,
             PermittedType = Convert.ToInt32(row["permitted_type"]),
-            MaxWeight = Convert.ToDecimal(row["max_weight"]),
-            MaxHeight = Convert.ToDecimal(row["max_height"]),
+            MaxWeight = Convert.ToDouble(row["max_weight"]),
+            MaxHeight = Convert.ToDouble(row["max_height"]),
             MaxQuantityContainers = Convert.ToInt32(row["max_quantity_containers"]),
             ContainerCount = Convert.ToInt32(row["container_count"])
         };
