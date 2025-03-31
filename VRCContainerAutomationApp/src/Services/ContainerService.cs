@@ -19,7 +19,7 @@ public static class ContainerService
                              @height,
                              @weight,
                              @idType,
-                             2,
+                             1,
                              @idLocation);
                       SELECT last_insert_rowid();";
             insertContainerCmd.Parameters.AddWithValue("@uuid", uuidValue);
@@ -37,7 +37,7 @@ public static class ContainerService
                      VALUES (@idContainer,
                              @uuidContainer,
                              @idLocation,
-                             2)";
+                             1)";
 
             insertLogCmd.Parameters.AddWithValue("@idContainer", idContainer);
             insertLogCmd.Parameters.AddWithValue("@uuidContainer", uuidValue);

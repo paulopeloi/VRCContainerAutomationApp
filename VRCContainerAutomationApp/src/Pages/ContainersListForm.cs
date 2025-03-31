@@ -61,7 +61,7 @@ namespace VRCContainerAutomationApp
             }
             else
             {
-                MessageBox.Show("Selecione um container primeiro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum container foi selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -76,7 +76,7 @@ namespace VRCContainerAutomationApp
             }
             else
             {
-                MessageBox.Show("Selecione um container primeiro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum container foi selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
