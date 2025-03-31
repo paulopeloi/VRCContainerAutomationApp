@@ -4,14 +4,17 @@ public static class ContainerSql
 {
     public static string GetAllContainers =>
         @"
-            SELECT containers.uuid,
+            SELECT containers.id,
+                   containers.uuid,
                    containers.height,
                    containers.weight,
+                   containers.id_type AS idType,
                    containers_types.type,
+                   containers.id_status AS idStatus,
                    containers_status.status,
                    warehouse_locations.zone AS locationZone,
-                   containers.received_at,
-                   containers.last_operation_at
+                   containers.received_at AS receivedAt,
+                   containers.last_operation_at AS lastOperationAt
               FROM containers
               JOIN containers_types    ON (containers_types.id    = containers.id_type)
               JOIN containers_status   ON (containers_status.id   = containers.id_status)

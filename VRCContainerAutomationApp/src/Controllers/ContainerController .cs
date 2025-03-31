@@ -6,20 +6,20 @@ namespace VRCContainerAutomationApp.Controllers;
 
 public static class ContainerController
 {
-    public static bool ContainerStorage(string uuidValue, decimal heightValue, decimal weightValue, object? selectedTypeValue, int idLocationValue)
+    public static bool ContainerStorage(string uuid, decimal height, decimal weight, object? selectedType, int idLocation)
     {
-        if (string.IsNullOrWhiteSpace(uuidValue))
+        if (string.IsNullOrWhiteSpace(uuid))
             return false;
 
-        if (selectedTypeValue == null || !int.TryParse(selectedTypeValue.ToString(), out int idTypeValue))
+        if (selectedType == null || !int.TryParse(selectedType.ToString(), out int idTypeValue))
             return false;
 
-        if (weightValue <= 0 || heightValue <= 0)
+        if (weight <= 0 || height <= 0)
             return false;
 
         try
         {
-            ContainerService.ContainerStorage(uuidValue, heightValue, weightValue, idTypeValue, idLocationValue);
+            ContainerService.ContainerStorage(uuid, height, weight, idTypeValue, idLocation);
             return true;
         }
         catch (Exception ex)
@@ -32,5 +32,19 @@ public static class ContainerController
     public static List<ContainerListModel> GetAllContainers()
     {
         return ContainerService.GetAllContainers();
+    }
+
+    public static bool ContainerDispatch(string uuid)
+    {
+        try
+        {
+            ContainerService.ContainerDispatch(uuid);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"[ERRO] Falha ao despachar container: {ex.Message}");
+            return false;
+        }
     }
 }

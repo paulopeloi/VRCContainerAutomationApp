@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VRCContainerAutomationApp.Controllers;
+using VRCContainerAutomationApp.Models;
 
 namespace VRCContainerAutomationApp
 {
@@ -27,6 +28,10 @@ namespace VRCContainerAutomationApp
 
                 dataGridContainers.DataSource = containers;
 
+                dataGridContainers.Columns["Id"].Visible = false;
+                dataGridContainers.Columns["IdType"].Visible = false;
+                dataGridContainers.Columns["idStatus"].Visible = false;
+
                 dataGridContainers.Columns["Uuid"].HeaderText = "ID Único";
                 dataGridContainers.Columns["Height"].HeaderText = "Altura (m)";
                 dataGridContainers.Columns["Weight"].HeaderText = "Peso (kg)";
@@ -42,6 +47,18 @@ namespace VRCContainerAutomationApp
             }
         }
 
+        private bool ConfirmDispatch(string uuid)
+        {
+            var confirm = MessageBox.Show(
+                $"Realmente deseja despachar o container de ID \"{uuid}\"?",
+                "Confirmar Despache",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+            );
+
+            return confirm == DialogResult.OK;
+        }
+
         private void ContainersListForm_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
@@ -54,10 +71,30 @@ namespace VRCContainerAutomationApp
         {
             if (dataGridContainers.SelectedCells.Count > 0)
             {
-                var selectedRowIndex = dataGridContainers.SelectedCells[0].RowIndex;
-                var selectedContainerId = dataGridContainers.Rows[selectedRowIndex].Cells["uuid"].Value;
+                var rowIndex = dataGridContainers.SelectedCells[0].RowIndex;
+                var idStatus = Convert.ToInt32(dataGridContainers.Rows[rowIndex].Cells["idStatus"].Value);
 
-                Debug.WriteLine($"Dispatch container: {selectedContainerId}");
+                if (idStatus == 2)
+                {
+                    MessageBox.Show("Container já despachado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var uuid = dataGridContainers.Rows[rowIndex].Cells["uuid"].Value?.ToString() ?? string.Empty;
+
+                if (!ConfirmDispatch(uuid)) return;
+
+                bool dispatchSuccess = ContainerController.ContainerDispatch(uuid);
+
+                if (dispatchSuccess)
+                {
+                    MessageBox.Show("Container despachado com sucesso!");
+                    LoadDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao despachar container. Tente novamente.");
+                }
             }
             else
             {

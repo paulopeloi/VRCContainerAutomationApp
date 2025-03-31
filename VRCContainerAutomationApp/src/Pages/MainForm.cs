@@ -102,12 +102,12 @@ namespace VRCContainerAutomationApp
 
             if (storageSuccess)
             {
+                MessageBox.Show("Container armazenado com sucesso!");
                 InputSelectType.SelectedIndex = -1;
                 InputHeight.Value = 0;
                 InputWeight.Value = 0;
                 InputUUID.Text = string.Empty;
                 ButtonUUID.Enabled = true;
-                MessageBox.Show("Container armazenado com sucesso!");
             }
             else
             {
