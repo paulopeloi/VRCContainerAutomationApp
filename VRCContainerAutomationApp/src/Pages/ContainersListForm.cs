@@ -41,6 +41,8 @@ namespace VRCContainerAutomationApp
             this.TopMost = true;
             this.BringToFront();
             this.Activate();
+            dataGridContainers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridContainers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             LoadDataGrid();
         }
         private bool ConfirmDispatch(string uuid)
