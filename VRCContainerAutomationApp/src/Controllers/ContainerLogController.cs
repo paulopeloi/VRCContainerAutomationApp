@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using VRCContainerAutomationApp.Models;
+using VRCContainerAutomationApp.Services;
 
-namespace VRCContainerAutomationApp.src.Controllers
+namespace VRCContainerAutomationApp.Controllers;
+
+public static class ContainerLogController
 {
-    internal class ContainerLogController
+    public static List<ContainerLogModel> GetContainerLogs(string uuid)
     {
+        return ContainerLogService.GetContainerLogs(uuid);
     }
 }

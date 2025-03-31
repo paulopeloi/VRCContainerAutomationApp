@@ -114,5 +114,19 @@ namespace VRCContainerAutomationApp
                 MessageBox.Show("Nenhum container foi selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void ButtonLogs_Click(object sender, EventArgs e)
+        {
+            if (dataGridContainers.SelectedCells.Count > 0)
+            {
+                var rowIndex = dataGridContainers.SelectedCells[0].RowIndex;
+                var uuid = dataGridContainers.Rows[rowIndex].Cells["uuid"].Value?.ToString() ?? string.Empty;
+                new LogsForm(uuid).ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum container foi selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

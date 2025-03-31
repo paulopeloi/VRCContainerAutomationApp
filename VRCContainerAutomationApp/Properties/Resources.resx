@@ -136,13 +136,16 @@
   <data name="edit-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cancel-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="warehouse-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warehouse-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logs-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logs-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

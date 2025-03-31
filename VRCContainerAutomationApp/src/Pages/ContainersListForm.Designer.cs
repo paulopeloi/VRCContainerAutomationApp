@@ -35,6 +35,7 @@
             ButtonDispatch = new Button();
             ButtonLocation = new Button();
             dataGridContainers = new DataGridView();
+            ButtonLogs = new Button();
             headerMain.SuspendLayout();
             footerMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridContainers).BeginInit();
@@ -69,6 +70,7 @@
             // 
             footerMain.BackColor = Color.WhiteSmoke;
             footerMain.BorderStyle = BorderStyle.FixedSingle;
+            footerMain.Controls.Add(ButtonLogs);
             footerMain.Controls.Add(ButtonDispatch);
             footerMain.Controls.Add(ButtonLocation);
             footerMain.Dock = DockStyle.Bottom;
@@ -130,6 +132,27 @@
             dataGridContainers.Size = new Size(784, 364);
             dataGridContainers.TabIndex = 4;
             // 
+            // ButtonLogs
+            // 
+            ButtonLogs.AutoSize = true;
+            ButtonLogs.BackColor = Color.White;
+            ButtonLogs.BackgroundImageLayout = ImageLayout.None;
+            ButtonLogs.Dock = DockStyle.Left;
+            ButtonLogs.FlatAppearance.BorderSize = 2;
+            ButtonLogs.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonLogs.ForeColor = Color.Black;
+            ButtonLogs.Image = Properties.Resources.logs_icon;
+            ButtonLogs.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonLogs.Location = new Point(16, 13);
+            ButtonLogs.Name = "ButtonLogs";
+            ButtonLogs.RightToLeft = RightToLeft.No;
+            ButtonLogs.Size = new Size(73, 36);
+            ButtonLogs.TabIndex = 2;
+            ButtonLogs.Text = "LOG";
+            ButtonLogs.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ButtonLogs.UseVisualStyleBackColor = false;
+            ButtonLogs.Click += ButtonLogs_Click;
+            // 
             // ContainersListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -164,5 +187,6 @@
         private DataGridView dataGridContainers;
         private Button ButtonDispatch;
         private Button ButtonLocation;
+        private Button ButtonLogs;
     }
 }
