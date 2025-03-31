@@ -20,12 +20,4 @@ public static class WarehouseLocationSql
          ORDER BY container_count ASC
          LIMIT 1;
         ";
-
-    public static string UpdateContainerCount =>
-        @"
-        UPDATE warehouse_locations
-           SET container_count = container_count + 1,
-               last_operation_at = CURRENT_TIMESTAMP
-         WHERE id = @id;
-        ";
 }

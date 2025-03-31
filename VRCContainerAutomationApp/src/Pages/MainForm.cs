@@ -1,8 +1,7 @@
-using System.Diagnostics;
-using VRCContainerAutomationApp.Database;
 using VRCContainerAutomationApp.Utils;
 using VRCContainerAutomationApp.Controllers;
 using VRCContainerAutomationApp.Models;
+using System.Diagnostics;
 
 namespace VRCContainerAutomationApp
 {
@@ -56,14 +55,31 @@ namespace VRCContainerAutomationApp
             var heightValue = InputHeight.Value;
 
             var availableLocation = WarehouseLocationController.FindAvailableLocation(selectedTypeValue, weightValue, heightValue);
-
+      
             if (availableLocation == null)
             {
                 MessageBox.Show("Nenhuma localização disponível para esse container.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!ConfirmStorage(availableLocation)) return;            
+            if (!ConfirmStorage(availableLocation)) return;
+
+            var uuidValue = InputUUID.Text;
+            bool storageSuccess = ContainerController.ContainerStorage(uuidValue, heightValue, weightValue, selectedTypeValue, availableLocation.Id);
+
+            if (storageSuccess)
+            {
+                InputSelectType.SelectedIndex = -1;
+                InputHeight.Value = 0;
+                InputWeight.Value = 0;
+                InputUUID.Text = string.Empty;
+                ButtonUUID.Enabled = true;
+                MessageBox.Show("Container armazenado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Falha ao armazenar container. Verifique os dados.");
+            }
         }
 
         private bool ValidateForm()
@@ -82,7 +98,7 @@ namespace VRCContainerAutomationApp
 
             if (string.IsNullOrWhiteSpace(InputUUID.Text))
             {
-                MessageBox.Show("UUID não foi gerado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ID Único não foi gerado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -94,14 +110,11 @@ namespace VRCContainerAutomationApp
             var confirm = MessageBox.Show(
                 $"Local disponível: {location.Zone}\nConfirma o armazenamento?",
                 "Confirmar Armazenagem",
-                MessageBoxButtons.YesNo,
+                MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question
             );
 
-            if (confirm != DialogResult.Yes)
-                return true;
-            else
-                return false;
+            return confirm == DialogResult.OK;
         }
     }
 }

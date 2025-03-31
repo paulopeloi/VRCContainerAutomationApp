@@ -53,17 +53,20 @@ public static class SQLiteService
             );
 
             CREATE TABLE IF NOT EXISTS containers_logs (
-                id             INTEGER PRIMARY KEY AUTOINCREMENT
-                                       NOT NULL,
-                id_container   INTEGER REFERENCES containers (id) 
-                                       NOT NULL,
-                uuid_container TEXT    REFERENCES containers (uuid) 
-                                       NOT NULL,
-                id_location    INTEGER REFERENCES warehouse_locations (id) 
-                                       NOT NULL,
-                operation      TEXT    NOT NULL,
-                timestamp      TEXT    DEFAULT (CURRENT_TIMESTAMP) 
+                id                  INTEGER PRIMARY KEY AUTOINCREMENT
+                                            NOT NULL,
+                id_container        INTEGER REFERENCES containers (id) 
+                                            NOT NULL,
+                uuid_container      TEXT    REFERENCES containers (uuid) 
+                                            NOT NULL,
+                id_old_location     INTEGER REFERENCES warehouse_locations (id),
+                id_new_location     INTEGER REFERENCES warehouse_locations (id) 
+                                            NOT NULL,
+                id_status_operation INTEGER REFERENCES containers_status (id) 
+                                            NOT NULL,
+                ocurred_at          TEXT    DEFAULT (CURRENT_TIMESTAMP) 
             );
+
 
             CREATE TABLE IF NOT EXISTS containers_status (
                 id          INTEGER PRIMARY KEY AUTOINCREMENT
@@ -166,5 +169,25 @@ public static class SQLiteService
         }
 
         return results;
+    }
+
+    public static void ExecuteTransaction(Action<SqliteConnection, SqliteTransaction> action)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        using var transaction = connection.BeginTransaction();
+
+        try
+        {
+            action(connection, transaction);
+            transaction.Commit();
+        }
+        catch (Exception ex)
+        {
+            transaction.Rollback();
+            Debug.WriteLine($"[SQLite] Falha - Houve Rollback na Transação: {ex.Message}");
+            throw;
+        }
     }
 }

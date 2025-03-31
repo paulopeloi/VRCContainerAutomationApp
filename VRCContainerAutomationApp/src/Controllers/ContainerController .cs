@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using VRCContainerAutomationApp.Services;
 
-namespace VRCContainerAutomationApp.src.Controllers
+namespace VRCContainerAutomationApp.Controllers;
+
+public static class ContainerController
 {
-    internal class ContainerController
+    public static bool ContainerStorage(string uuidValue, decimal heightValue, decimal weightValue, object? selectedTypeValue, int idLocationValue)
     {
+        if (string.IsNullOrWhiteSpace(uuidValue))
+            return false;
+
+        if (selectedTypeValue == null || !int.TryParse(selectedTypeValue.ToString(), out int idTypeValue))
+            return false;
+
+        if (weightValue <= 0 || heightValue <= 0)
+            return false;
+
+        try
+        {
+            ContainerService.ContainerStorage(uuidValue, heightValue, weightValue, idTypeValue, idLocationValue);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"[ERRO] Falha ao armazenar container: {ex.Message}");
+            return false;
+        }
     }
 }
