@@ -36,15 +36,14 @@ Tudo isso com uma interface amigável feita em **WinForms**, conectada a um banc
 /VRCContainerAutomationApp
 |│
 |├── src/
-|   ├── Controllers/          # Regras e tratamento de entrada
+|   ├── Controllers/         # Regras e tratamento de entrada
 |   ├── Database/            # Conexão e serviço de acesso SQLite
-|   ├── Logs/                # Armazenamento futuro dos logs em arquivo
-|   ├── Models/              # Models para estrutura de dados
 |   ├── Mappers/             # Conversão de dados do DB para Model
+|   ├── Models/              # Models para estrutura de dados
 |   ├── Pages/               # Forms (WinForms) da aplicação
 |   ├── Services/            # Regras de negócio, queries, transações
 |   ├── SQLs/                # Arquivos SQL reutilizáveis
-|   └── Utils/               # Gerador de UUID, formatadores etc.
+|   └── Utils/               # Gerador de UUID com Guid.NewGuid()
 |
 └── Resources/               # Imagens e ícones usados nos forms
 ```
