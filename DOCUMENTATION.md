@@ -8,7 +8,7 @@ A aplicação permite:
 
 - Cadastro de novos containers
 - Armazenamento em locais válidos
-- Geração de UUID automática com `Guid.NewGuid()`
+- Geração de UUID automática e imutável
 - Troca de localização com validações
 - Despacho de containers
 - Consulta de histórico de movimentações (logs)
@@ -21,7 +21,7 @@ Tudo isso com uma interface amigável feita em **WinForms**, conectada a um banc
 
 - Cadastro de containers com validações de peso, altura e tipo
 - Algoritmo para seleção automática de localização válida
-- Geração de UUID automática e imutável
+- Geração de UUID automática com `Guid.NewGuid()`
 - Registro de logs para toda operação executada
 - Listagem dos containers com informações completas
 - Função de despacho que atualiza o status e o local
