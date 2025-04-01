@@ -122,9 +122,6 @@ Todas as operações que envolvem múltiplas ações são feitas via `ExecuteTra
 |   Banco SQLite    |
 +------------------+
 ```
-
-Logs e comunicações futuras via OPC UA podem ser encaixadas como serviço adicional.
-
 ---
 
 ## 🏆 Considerações Finais
