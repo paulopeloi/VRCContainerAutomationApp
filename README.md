@@ -83,6 +83,12 @@ Projeto licenciado sob a [MIT License](LICENSE).
 
 ---
 
+## 📄 Documentação
+
+Leia a [documentação](./DOCUMENTATION.md) para mais detalhes.
+
+---
+
 ## 🧠 Autor
 
 Desenvolvido por **Paulo Ricardo Peloi** para o desafio técnico da VRC Technologies.
