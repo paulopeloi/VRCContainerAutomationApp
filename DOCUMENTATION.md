@@ -54,9 +54,17 @@ Tudo isso com uma interface amigável feita em **WinForms**, conectada a um banc
 
 ### 🔎 Geração de UUID
 
-Utiliza o `Guid.NewGuid().ToString()` para criar um identificador único, que é gerado automaticamente ao clicar em um botão no form. O botão é desabilitado após a geração para impedir edição.
+A aplicação utiliza `Guid.NewGuid().ToString()` para gerar um identificador único para cada container. Esse UUID é criado automaticamente ao clicar no botão correspondente no formulário, sendo imediatamente atribuído ao campo e desabilitando o botão para impedir modificações manuais.
 
-### 🔹 Definição de Localização Válida
+Além disso, para reforçar a integridade e garantir a **unicidade absoluta** do identificador mesmo em cenários extremos, o campo `uuid` da tabela `containers` é definido como `UNIQUE` no banco de dados SQLite:
+
+```sql
+uuid TEXT UNIQUE NOT NULL
+```
+
+Essa abordagem em dupla camada (software + banco) assegura que nenhum UUID duplicado seja inserido, oferecendo confiabilidade total na identificação dos containers.
+
+### 🚩 Definição de Localização Válida
 
 A aplicação realiza uma busca em `warehouse_locations` considerando:
 
