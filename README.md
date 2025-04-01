@@ -9,7 +9,7 @@ Este projeto foi criado como parte do **desafio técnico da VRC Warehouse Techno
 ## ⚙️ Funcionalidades
 
 - ✅ **Cadastro de Containers**  
-  Registra novos containers com UUID, altura, peso, tipo e localização válida, **incluindo validações** para garantir consistência. Cada cadastro é registrado automaticamente no log de movimentações. 
+Registra novos containers com um UUID gerado via `Guid.NewGuid()`, junto com informações como altura, peso, tipo e a atribuição automática de uma localização válida. O processo inclui validações para garantir a consistência dos dados, e cada operação é registrada automaticamente no histórico de movimentações (log).
 
 - ✅ **Visualização de Containers**  
   Lista todos os containers cadastrados em um `DataGridView` com detalhes como tipo, status, localização e datas de operação.
