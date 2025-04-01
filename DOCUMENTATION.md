@@ -93,35 +93,12 @@ Todas as operações que envolvem múltiplas ações são feitas via `ExecuteTra
 
 ---
 
-## 🛁 Diagrama de Arquitetura
+## 🧱 Diagrama de Arquitetura
 
-```plaintext
-+------------------+
-|   MainForm.cs    |
-| (WinForms UI)    |
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   Controllers     |
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   Services         |
-+--------+---------+
-         |
-         v
-+--------+---------+
-|  SQLiteService     |
-| (Database Access)  |
-+--------+---------+
-         |
-         v
-+------------------+
-|   Banco SQLite    |
-+------------------+
-```
+Abaixo está o fluxo de chamadas e responsabilidades no projeto:
+
+![Diagrama da Arquitetura](https://github.com/paulopeloi/VRCContainerAutomationApp/blob/main/VRCContainerAutomationApp/docs/diagrama-arquitetura.png)
+
 ---
 
 ## 🏆 Considerações Finais
