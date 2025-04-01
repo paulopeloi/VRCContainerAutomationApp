@@ -77,7 +77,7 @@ namespace VRCContainerAutomationApp
 
                 if (dispatchSuccess)
                 {
-                    MessageBox.Show("Container despachado com sucesso!");
+                    MessageBox.Show("Container despachado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDataGrid();
                 }
                 else

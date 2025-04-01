@@ -81,12 +81,12 @@ namespace VRCContainerAutomationApp.src.Pages
 
             if (changeLocationSuccess)
             {
-                MessageBox.Show("Localização do container alterada com sucesso!");
+                MessageBox.Show("Localização do container alterada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Falha ao trocar o localização do container. Tente novamente.");
+                MessageBox.Show("Falha ao trocar o localização do container. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

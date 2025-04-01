@@ -102,7 +102,7 @@ namespace VRCContainerAutomationApp
 
             if (storageSuccess)
             {
-                MessageBox.Show("Container armazenado com sucesso!");
+                MessageBox.Show("Container armazenado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InputSelectType.SelectedIndex = -1;
                 InputHeight.Value = 0;
                 InputWeight.Value = 0;
@@ -111,7 +111,8 @@ namespace VRCContainerAutomationApp
             }
             else
             {
-                MessageBox.Show("Falha ao armazenar container. Verifique os dados.");
+
+                MessageBox.Show("Falha ao armazenar container. Verifique os dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
