@@ -93,26 +93,6 @@ Todas as operações que envolvem múltiplas ações são feitas via `ExecuteTra
 
 ---
 
-## 📚 Requisitos para Executar
-
-- Windows 10 ou superior
-- .NET 8.0 SDK instalado
-- Visual Studio 2022 (ou VSCode com extensões adequadas)
-
-### Como executar:
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/paulopeloi/VRCContainerAutomationApp.git
-```
-
-2. Abra com Visual Studio
-3. Restaure os pacotes NuGet
-4. Compile e execute em modo `Debug`
-
----
-
 ## 🛁 Diagrama de Arquitetura
 
 ```plaintext
@@ -149,5 +129,5 @@ Logs e comunicações futuras via OPC UA podem ser encaixadas como serviço adic
 
 ## 🏆 Considerações Finais
 
-O projeto foi desenvolvido com foco em organização, boas práticas e manutenção fácil do código. A ideia foi simular ao máximo uma aplicação real de gestão industrial com rastreabilidade total dos containers.
+O projeto foi desenvolvido com foco em organização, boas práticas e manutenção fácil do código. A ideia foi simular ao máximo uma aplicação real de automação industrial com rastreabilidade total dos containers.
 
